@@ -1,7 +1,9 @@
 const express = require('express');
-import createblog from '../controllers/createblog';
+const  createblog = require('../controllers/Createblog.controllers');
 
-const app = express.Router();
+const router = express.Router();
 
 // FetchAllBlog Router
-app.post('/createblog', createblog);
+router.post('/createblog', createblog);
+
+module.exports = router;

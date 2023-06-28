@@ -1,8 +1,11 @@
 const express = require('express');
 const moongoose = require('mongoose');
 const blogdb = require('./config/blogdb.config');
+const createblog = require('./routers/createblog.router')
+
 const app = express();
 
+app.use(express.json());
 moongoose.connect(blogdb.url,  {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -14,6 +17,7 @@ moongoose.connect(blogdb.url,  {
     process.exit();
 });
 
+app.use('/', createblog)
 
 app.get('/', function(req, res) {
     res.status(200).json({servermsg : "Building a simple blog api"})
