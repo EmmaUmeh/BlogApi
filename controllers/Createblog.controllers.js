@@ -1,10 +1,10 @@
 // const express = require('express')
-const CreateBlogModel = require('../model/createblog.model.js')
+const CreateBlog = require('../model/createblog.model.js')
 
 
 const createblog = async (req, res) => {
 // const CreateAll = req.body
-const createblog = new CreateBlogModel({
+const createblog = new CreateBlog({
     author: req.body.author,
     title: req.body.title,
     content: req.body.content

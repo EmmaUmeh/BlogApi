@@ -6,4 +6,4 @@ const DeleteBlogSchema = new mongoose.Schema({
     content: String,
 })
 
-module.exports = mongoose.model('FetchAll', DeleteBlogSchema);
+module.exports = mongoose.model('DeleteBlog', DeleteBlogSchema);
