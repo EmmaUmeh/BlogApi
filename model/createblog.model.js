@@ -6,4 +6,4 @@ const CreateBlogModel = new mongoose.Schema({
     content: String,
 })
 
-module.exports = mongoose.model('CreateAll', CreateBlogModel);
+module.exports = mongoose.model('CreateBlog', CreateBlogModel);

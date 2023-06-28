@@ -1,7 +1,9 @@
 const express = require('express');
 const moongoose = require('mongoose');
 const blogdb = require('./config/blogdb.config');
-const createblog = require('./routers/createblog.router')
+const createblog = require('./routers/createblog.router');
+const fetchblog = require('./routers/fetchblog.router');
+const deleteblog = require('./routers/deleteblog.router')
 
 const app = express();
 
@@ -17,7 +19,9 @@ moongoose.connect(blogdb.url,  {
     process.exit();
 });
 
-app.use('/', createblog)
+app.use('/', createblog);
+app.use('/', fetchblog);
+app.use('/', deleteblog);
 
 app.get('/', function(req, res) {
     res.status(200).json({servermsg : "Building a simple blog api"})

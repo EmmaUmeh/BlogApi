@@ -1,7 +1,9 @@
 const express = require('express');
-
-const app = express.Router();
+const deleteblog = require('../controllers/Deleteblog.controllers')
+const router = express.Router();
 
 // FetchAllBlog Router
 
-app.delete('/deleteblog', )
+router.delete('/deleteblog', deleteblog)
+
+module.exports = router;

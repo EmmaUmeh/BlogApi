@@ -1,7 +1,9 @@
 const express = require('express');
-
-const app = express.Router();
+const fetchblog = require('../controllers/Fetchblog.controllers')
+const router = express.Router();
 
 // FetchAllBlog Router
 
-app.get('/fetchblog', )
+router.get('/fetchblog', fetchblog)
+
+module.exports = router;
